@@ -1,0 +1,9 @@
+check_id,table_name,col_involved,description,violations,status,run_timestamp
+EC-001,dm,"SITEID, USUBJID","Patient ID must be unique per site",0,PASS,"2026-08-02 18:07:31"
+EC-002,"dm,ae,cm,lb,vs","USUBJID, ARMCD","Cross-reference DM with data domains + withdrawal status reconciliation",52,REVIEW,"2026-08-02 18:07:31"
+EC-003,dm,AGE,"Age must meet protocol eligibility (18-100)",0,PASS,"2026-08-02 18:07:31"
+EC-004,cm,"VISITDY, CMSTDTC","CM Study Day validity: sign consistency + missing pairs (partial dates excluded)",845,REVIEW,"2026-08-02 18:07:31"
+EC-005,lb,"LBSTRESN, LBSTNRLO, LBSTNRHI, LBNRIND","Out-of-range lab values flagged for medical review (no AE assumption)",2551,REVIEW,"2026-08-02 18:07:31"
+EC-006,ae,"AESTDTC, AEENDTC","AE end date must not precede start date (full dates only; partial dates excluded)",0,PASS,"2026-08-02 18:07:31"
+EC-007,"ae,dm","AEOUT, AESDTH, DTHDTC","Fatal outcome/death flag requires Date of Death in DM",0,PASS,"2026-08-02 18:07:31"
+EC-008,ae,"AESER, AESEV","Seriousness/severity consistency (Serious + Mild mismatch)",0,PASS,"2026-08-02 18:07:31"
