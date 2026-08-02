@@ -35,6 +35,4 @@ crf-design/
 > *"CRF design ensures traceability from data collection to SDTM mapping, enabling clean and compliant datasets."*
 "@ | Out-File "README.md" -Encoding utf8 -Force
 
-git add README.md
-git commit -m "README update with CRF form link and repo structure"
 git push origin main
