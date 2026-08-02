@@ -1,29 +1,18 @@
-﻿# CRF Design & SDTM Mapping
+﻿# SDTM Dataset Validation
 
 ## Overview
-This project demonstrates Clinical Data Management (CDM) deliverables including CRF design, annotated CRFs, specification sheets, and edit logic checks. It highlights how CRF data collection aligns with CDISC standards and supports downstream SDTM validation.
+This project demonstrates validation of clinical trial datasets mapped to CDISC SDTM standards. It includes edit check logic, discrepancy reports, and compliance checks across multiple domains (DM, AE, CM, LB, VS).
 
-## Artifacts
-- **crf_artifacts/**  
-  - Clinical Trial Data Entry eCRF.pdf  
-  - Clinical Trial Data Entry aCRF.pdf  
-- **sdtm_mapping/**  
-  - spec sheet.xlsx  
-- **edit_checks/**  
-  - edit check list.xlsx  
+## Deliverables
+- **validation_reports/** → Final edit check outputs (e.g., EC-001 to EC-008)  
+- **validation_scripts/** → SQL/Python scripts for automated validation  
+- **discrepancy_logs/** → Records of issues flagged for medical/data review  
 
-## Example Domains (based on eCRF modules)
-- **DM (Demographics):** Patient ID, Study Site, Date of Birth, Sex, Visit Date  
-- **CM (Concomitant Medications):** Drug Name, Dose, Frequency, Days of Treatment  
-- **LB (Laboratory Tests):** Test Name, Test Value, Test Unit  
-- **AE (Adverse Events):** AE Term, Start Date, End Date, Seriousness, Severity, Outcome  
-- **ADR Form:** Suspect Drug, Suspect Event, Concomitant Medications, WHO-UMC Causality, Physician/Subject Signatures  
+## Example Edit Checks
+- **EC-001 (DM):** Patient ID must be unique per site → PASS  
+- **EC-004 (CM):** Study Day validity with partial date handling → REVIEW  
+- **EC-005 (LB):** Out-of-range lab values flagged for medical review → REVIEW  
+- **EC-007 (AE/DM):** Fatal outcome requires Date of Death in DM → PASS  
 
 ## CDM Philosophy
-> *"I validate and state issues; I never clean source data."*  
->
-> CRF design and SDTM mapping are documented for traceability and compliance, ensuring audit trail integrity in clinical data management.
-
-## CRF Form Access
-You can view and fill out the live CRF form here:  
-[Open CRF Form](https://tally.so/r/WOXXWe)
+> *"Validation ensures compliance and traceability; data issues are flagged, not cleaned."*
