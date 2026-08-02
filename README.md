@@ -24,6 +24,6 @@ This project demonstrates Clinical Data Management (CDM) deliverables including 
 >
 > CRF design and SDTM mapping are documented for traceability and compliance, ensuring audit trail integrity in clinical data management.
 
-## Feedback Form
-I welcome feedback and collaboration. Please share your thoughts here:  
-[Submit Feedback](https://tally.so/r/WOXXWe)
+## CRF Form Access
+You can view and fill out the live CRF form here:  
+[Open CRF Form](https://tally.so/r/WOXXWe)
