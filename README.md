@@ -1,26 +1,19 @@
-﻿# SDTM Dataset Validation
+﻿# CRF Design
 
 ## Overview
-This project demonstrates validation of clinical trial datasets mapped to CDISC SDTM standards using the Pharmaverse synthetic SDTM dataset.  
-It includes edit check logic, discrepancy reports, and compliance checks across multiple domains (DM, AE, CM, LB, VS).
-
-## Dataset Source
-Validation performed on the Pharmaverse SDTM dataset:  
-[Pharmaverse SDTM Dataset](https://github.com/pharmaverse/sdtm.oak/tree/main/inst)
+This repository demonstrates Case Report Form (CRF) design and documentation for clinical data management.  
+It includes eCRF, annotated CRF (aCRF), specification sheets, and edit check logic.
 
 ## Deliverables
-- **validation_reports/**  
-  - EC-002 cross domain subject mismatch issues.csv  
-  - EC-004 study day mismatch issues.csv  
-  - EC-005 lab values issue (out of the range).csv  
-  - all edit checks log record.csv  
-- **validation_scripts/**  
-  - sdtm.sql  
+- **crf_artifacts/** → eCRF, aCRF, spec sheet, edit check list  
+- **edit_checks/** → Edit check definitions and logic  
+- **sdtm_mapping/** → Mapping specifications from CRF to SDTM domains  
 
 ## Example Edit Checks
-- **EC-002 (DM, AE, CM, LB, VS):** Cross-reference DM with data domains + withdrawal status reconciliation  
-- **EC-004 (CM):** Study Day validity: sign consistency + missing pairs (partial dates excluded)  
-- **EC-005 (LB):** Out-of-range lab values flagged for medical review (no AE assumption)  
+- **EC-001 (DM):** Patient ID must be unique per site  
+- **EC-003 (DM):** Age must meet protocol eligibility (placeholder 18–100)  
+- **EC-006 (AE):** AE end date must not precede start date  
+- **EC-007 (AE/DM):** Fatal outcome requires Date of Death in DM  
 
 ## CDM Philosophy
-> *"Validation ensures compliance and traceability; data issues are flagged, not cleaned."*
+> *"CRF design ensures traceability from data collection to SDTM mapping, enabling clean and compliant datasets."*
